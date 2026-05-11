@@ -165,7 +165,7 @@ export function useUserRole() {
  * }
  */
 export function useSessionTimeout(timeoutMs = 30 * 60 * 1000) {
-  const { logout } = useAuth();
+  const { logout, isAuthenticated } = useAuth();
   const timeoutRef = useRef(null);
 
   const resetTimeout = useCallback(() => {
@@ -179,6 +179,13 @@ export function useSessionTimeout(timeoutMs = 30 * 60 * 1000) {
   }, [logout, timeoutMs]);
 
   useEffect(() => {
+    if (!isAuthenticated) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      return;
+    }
+
     // Reset timeout on user activity
     const events = ['mousedown', 'keydown', 'scroll', 'touchstart', 'click'];
 
@@ -202,7 +209,7 @@ export function useSessionTimeout(timeoutMs = 30 * 60 * 1000) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [resetTimeout]);
+  }, [isAuthenticated, resetTimeout]);
 }
 
 export default {

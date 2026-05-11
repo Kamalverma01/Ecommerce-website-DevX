@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { useToast } from '@/components/ui/use-toast';
-import { auth, googleProvider } from '@/config/firebase-config';
+import { auth, googleProvider, isFirebaseConfigured } from '@/config/firebase-config';
 import { signInWithPopup } from 'firebase/auth';
 
 export default function EnhancedLogin() {
@@ -74,8 +74,16 @@ export default function EnhancedLogin() {
   };
 
   const handleGoogleLogin = async () => {
-    setIsLoading(true);
     try {
+      if (!isFirebaseConfigured || !auth || !googleProvider) {
+        toast({
+          title: 'Google sign in is not configured',
+          variant: 'destructive',
+        });
+        return;
+      }
+
+      setIsLoading(true);
       const result = await signInWithPopup(auth, googleProvider);
       const firebaseIdToken = await result.user.getIdToken();
 

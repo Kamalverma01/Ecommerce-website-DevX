@@ -1,0 +1,10 @@
+2026/05/11-23:41:40.836 4148 Creating DB C:\Users\kamal\OneDrive\Desktop\DevX\.chrome-debug-profile\Default\IndexedDB\http_localhost_5173.indexeddb.leveldb since it was missing.
+2026/05/11-23:41:40.843 4148 Reusing MANIFEST C:\Users\kamal\OneDrive\Desktop\DevX\.chrome-debug-profile\Default\IndexedDB\http_localhost_5173.indexeddb.leveldb/MANIFEST-000001
+2026/05/11-23:41:40.854 3b48 Level-0 table #5: started
+2026/05/11-23:41:40.859 3b48 Level-0 table #5: 654 bytes OK
+2026/05/11-23:41:40.862 3b48 Delete type=0 #3
+2026/05/11-23:41:40.863 3b48 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/11-23:41:50.085 4130 Level-0 table #7: started
+2026/05/11-23:41:50.091 4130 Level-0 table #7: 1541 bytes OK
+2026/05/11-23:41:50.094 4130 Delete type=0 #4
+2026/05/11-23:41:50.095 3bb4 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

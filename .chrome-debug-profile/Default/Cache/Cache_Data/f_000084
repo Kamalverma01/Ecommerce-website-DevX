@@ -1,0 +1,193 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/ui/select.jsx");const React = ((m, n) => n || !m?.__esModule ? {	...typeof m === "object" && !Array.isArray(m) || typeof m === "function" ? m : {},	default: m} : m)(__vite__cjsImport0_react, 1);const _jsxDEV = __vite__cjsImport4_react_jsxDevRuntime["jsxDEV"];import __vite__cjsImport0_react from "/node_modules/.vite/deps/react.js?v=0eabe880";
+import * as SelectPrimitive from "/node_modules/.vite/deps/@radix-ui_react-select.js?v=73562e8e";
+import { Check, ChevronDown, ChevronUp } from "/node_modules/.vite/deps/lucide-react.js?v=2a59ae0c";
+import { cn } from "/src/lib/utils.js";
+var _jsxFileName = "C:/Users/kamal/OneDrive/Desktop/DevX/client/src/components/ui/select.jsx";
+import __vite__cjsImport4_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=0eabe880";
+const Select = SelectPrimitive.Root;
+const SelectGroup = SelectPrimitive.Group;
+const SelectValue = SelectPrimitive.Value;
+const SelectTrigger = React.forwardRef(_c = ({ className, children, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.Trigger, {
+	ref,
+	className: cn("flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1", className),
+	...props,
+	children: [children, /* @__PURE__ */ _jsxDEV(SelectPrimitive.Icon, {
+		asChild: true,
+		children: /* @__PURE__ */ _jsxDEV(ChevronDown, { className: "h-4 w-4 opacity-50" }, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 23,
+			columnNumber: 7
+		}, this)
+	}, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 22,
+		columnNumber: 5
+	}, this)]
+}, void 0, true, {
+	fileName: _jsxFileName,
+	lineNumber: 14,
+	columnNumber: 3
+}, this));
+_c2 = SelectTrigger;
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+const SelectScrollUpButton = React.forwardRef(_c3 = ({ className, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.ScrollUpButton, {
+	ref,
+	className: cn("flex cursor-default items-center justify-center py-1", className),
+	...props,
+	children: /* @__PURE__ */ _jsxDEV(ChevronUp, { className: "h-4 w-4" }, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 34,
+		columnNumber: 5
+	}, this)
+}, void 0, false, {
+	fileName: _jsxFileName,
+	lineNumber: 30,
+	columnNumber: 3
+}, this));
+_c4 = SelectScrollUpButton;
+SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
+const SelectScrollDownButton = React.forwardRef(_c5 = ({ className, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.ScrollDownButton, {
+	ref,
+	className: cn("flex cursor-default items-center justify-center py-1", className),
+	...props,
+	children: /* @__PURE__ */ _jsxDEV(ChevronDown, { className: "h-4 w-4" }, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 44,
+		columnNumber: 5
+	}, this)
+}, void 0, false, {
+	fileName: _jsxFileName,
+	lineNumber: 40,
+	columnNumber: 3
+}, this));
+_c6 = SelectScrollDownButton;
+SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
+const SelectContent = React.forwardRef(_c7 = ({ className, children, position = "popper", ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.Portal, { children: /* @__PURE__ */ _jsxDEV(SelectPrimitive.Content, {
+	ref,
+	className: cn("relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2", position === "popper" && "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className),
+	position,
+	...props,
+	children: [
+		/* @__PURE__ */ _jsxDEV(SelectScrollUpButton, {}, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 62,
+			columnNumber: 7
+		}, this),
+		/* @__PURE__ */ _jsxDEV(SelectPrimitive.Viewport, {
+			className: cn("p-1", position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"),
+			children
+		}, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 63,
+			columnNumber: 7
+		}, this),
+		/* @__PURE__ */ _jsxDEV(SelectScrollDownButton, {}, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 68,
+			columnNumber: 7
+		}, this)
+	]
+}, void 0, true, {
+	fileName: _jsxFileName,
+	lineNumber: 52,
+	columnNumber: 5
+}, this) }, void 0, false, {
+	fileName: _jsxFileName,
+	lineNumber: 51,
+	columnNumber: 3
+}, this));
+_c8 = SelectContent;
+SelectContent.displayName = SelectPrimitive.Content.displayName;
+const SelectLabel = React.forwardRef(_c9 = ({ className, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.Label, {
+	ref,
+	className: cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className),
+	...props
+}, void 0, false, {
+	fileName: _jsxFileName,
+	lineNumber: 75,
+	columnNumber: 3
+}, this));
+_c10 = SelectLabel;
+SelectLabel.displayName = SelectPrimitive.Label.displayName;
+const SelectItem = React.forwardRef(_c11 = ({ className, children, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.Item, {
+	ref,
+	className: cn("relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50", className),
+	...props,
+	children: [/* @__PURE__ */ _jsxDEV("span", {
+		className: "absolute left-2 flex h-3.5 w-3.5 items-center justify-center",
+		children: /* @__PURE__ */ _jsxDEV(SelectPrimitive.ItemIndicator, { children: /* @__PURE__ */ _jsxDEV(Check, { className: "h-4 w-4" }, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 92,
+			columnNumber: 9
+		}, this) }, void 0, false, {
+			fileName: _jsxFileName,
+			lineNumber: 91,
+			columnNumber: 7
+		}, this)
+	}, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 90,
+		columnNumber: 5
+	}, this), /* @__PURE__ */ _jsxDEV(SelectPrimitive.ItemText, { children }, void 0, false, {
+		fileName: _jsxFileName,
+		lineNumber: 96,
+		columnNumber: 5
+	}, this)]
+}, void 0, true, {
+	fileName: _jsxFileName,
+	lineNumber: 83,
+	columnNumber: 3
+}, this));
+_c12 = SelectItem;
+SelectItem.displayName = SelectPrimitive.Item.displayName;
+const SelectSeparator = React.forwardRef(_c13 = ({ className, ...props }, ref) => /* @__PURE__ */ _jsxDEV(SelectPrimitive.Separator, {
+	ref,
+	className: cn("-mx-1 my-1 h-px bg-muted", className),
+	...props
+}, void 0, false, {
+	fileName: _jsxFileName,
+	lineNumber: 102,
+	columnNumber: 3
+}, this));
+_c14 = SelectSeparator;
+SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
+export { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator, SelectScrollUpButton, SelectScrollDownButton };
+var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14;
+$RefreshReg$(_c, "SelectTrigger$React.forwardRef");
+$RefreshReg$(_c2, "SelectTrigger");
+$RefreshReg$(_c3, "SelectScrollUpButton$React.forwardRef");
+$RefreshReg$(_c4, "SelectScrollUpButton");
+$RefreshReg$(_c5, "SelectScrollDownButton$React.forwardRef");
+$RefreshReg$(_c6, "SelectScrollDownButton");
+$RefreshReg$(_c7, "SelectContent$React.forwardRef");
+$RefreshReg$(_c8, "SelectContent");
+$RefreshReg$(_c9, "SelectLabel$React.forwardRef");
+$RefreshReg$(_c10, "SelectLabel");
+$RefreshReg$(_c11, "SelectItem$React.forwardRef");
+$RefreshReg$(_c12, "SelectItem");
+$RefreshReg$(_c13, "SelectSeparator$React.forwardRef");
+$RefreshReg$(_c14, "SelectSeparator");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope;
+import * as __vite_react_currentExports from "/src/components/ui/select.jsx";
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+
+  const currentExports = __vite_react_currentExports;
+  queueMicrotask(() => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/kamal/OneDrive/Desktop/DevX/client/src/components/ui/select.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/kamal/OneDrive/Desktop/DevX/client/src/components/ui/select.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) { return RefreshRuntime.register(type, "C:/Users/kamal/OneDrive/Desktop/DevX/client/src/components/ui/select.jsx" + ' ' + id); }
+function $RefreshSig$() { return RefreshRuntime.createSignatureFunctionForTransform(); }
+
+//# sourceMappingURL=data:application/json;base64,eyJtYXBwaW5ncyI6IkFBQUEsWUFBWSxXQUFXO0FBQ3ZCLFlBQVkscUJBQXFCO0FBQ2pDLFNBQVMsT0FBTyxhQUFhLGlCQUFpQjtBQUU5QyxTQUFTLFVBQVU7OztBQUVuQixNQUFNLFNBQVMsZ0JBQWdCO0FBRS9CLE1BQU0sY0FBYyxnQkFBZ0I7QUFFcEMsTUFBTSxjQUFjLGdCQUFnQjtBQUVwQyxNQUFNLGdCQUFnQixNQUFNLGlCQUFZLEVBQUUsV0FBVyxVQUFVLEdBQUcsU0FBUyxRQUN6RSx3QkFBQyxnQkFBZ0IsU0FBakI7Q0FDTztDQUNMLFdBQVcsR0FDVCxtVEFDQSxVQUNEO0NBQ0QsR0FBSTtXQU5OLENBT0csVUFDRCx3QkFBQyxnQkFBZ0IsTUFBakI7RUFBc0I7WUFDcEIsd0JBQUMsYUFBRCxFQUFhLFdBQVUsc0JBQXVCOzs7OztFQUN6Qjs7OztVQUNDOzs7OztTQUMxQjs7QUFDRixjQUFjLGNBQWMsZ0JBQWdCLFFBQVE7QUFFcEQsTUFBTSx1QkFBdUIsTUFBTSxrQkFBWSxFQUFFLFdBQVcsR0FBRyxTQUFTLFFBQ3RFLHdCQUFDLGdCQUFnQixnQkFBakI7Q0FDTztDQUNMLFdBQVcsR0FBRyx3REFBd0QsVUFBVTtDQUNoRixHQUFJO1dBQ0osd0JBQUMsV0FBRCxFQUFXLFdBQVUsV0FBWTs7Ozs7Q0FDRjs7OztTQUNqQzs7QUFDRixxQkFBcUIsY0FBYyxnQkFBZ0IsZUFBZTtBQUVsRSxNQUFNLHlCQUF5QixNQUFNLGtCQUFZLEVBQUUsV0FBVyxHQUFHLFNBQVMsUUFDeEUsd0JBQUMsZ0JBQWdCLGtCQUFqQjtDQUNPO0NBQ0wsV0FBVyxHQUFHLHdEQUF3RCxVQUFVO0NBQ2hGLEdBQUk7V0FDSix3QkFBQyxhQUFELEVBQWEsV0FBVSxXQUFZOzs7OztDQUNGOzs7O1NBQ25DOztBQUNGLHVCQUF1QixjQUNyQixnQkFBZ0IsaUJBQWlCO0FBRW5DLE1BQU0sZ0JBQWdCLE1BQU0sa0JBQVksRUFBRSxXQUFXLFVBQVUsV0FBVyxVQUFVLEdBQUcsU0FBUyxRQUM5Rix3QkFBQyxnQkFBZ0IsUUFBakIsWUFDRSx3QkFBQyxnQkFBZ0IsU0FBakI7Q0FDTztDQUNMLFdBQVcsR0FDVCx1Y0FDQSxhQUFhLFlBQ1gsbUlBQ0YsVUFDRDtDQUNTO0NBQ1YsR0FBSTtXQVROO0VBVUUsd0JBQUMsc0JBQUQsRUFBd0I7Ozs7O0VBQ3hCLHdCQUFDLGdCQUFnQixVQUFqQjtHQUNFLFdBQVcsR0FBRyxPQUFPLGFBQWEsWUFDaEMsMEZBQTBGO0dBQzNGO0dBQ3dCOzs7OztFQUMzQix3QkFBQyx3QkFBRCxFQUEwQjs7Ozs7RUFDRjs7Ozs7VUFDSDs7OztTQUN6Qjs7QUFDRixjQUFjLGNBQWMsZ0JBQWdCLFFBQVE7QUFFcEQsTUFBTSxjQUFjLE1BQU0sa0JBQVksRUFBRSxXQUFXLEdBQUcsU0FBUyxRQUM3RCx3QkFBQyxnQkFBZ0IsT0FBakI7Q0FDTztDQUNMLFdBQVcsR0FBRywwQ0FBMEMsVUFBVTtDQUNsRSxHQUFJO0NBQVM7Ozs7U0FDZjs7QUFDRixZQUFZLGNBQWMsZ0JBQWdCLE1BQU07QUFFaEQsTUFBTSxhQUFhLE1BQU0sbUJBQVksRUFBRSxXQUFXLFVBQVUsR0FBRyxTQUFTLFFBQ3RFLHdCQUFDLGdCQUFnQixNQUFqQjtDQUNPO0NBQ0wsV0FBVyxHQUNULDZOQUNBLFVBQ0Q7Q0FDRCxHQUFJO1dBTk4sQ0FPRSx3QkFBQyxRQUFEO0VBQU0sV0FBVTtZQUNkLHdCQUFDLGdCQUFnQixlQUFqQixZQUNFLHdCQUFDLE9BQUQsRUFBTyxXQUFVLFdBQVk7Ozs7WUFDQzs7Ozs7RUFDM0I7Ozs7V0FFUCx3QkFBQyxnQkFBZ0IsVUFBakIsRUFBMkIsVUFBb0M7Ozs7VUFDMUM7Ozs7O1NBQ3ZCOztBQUNGLFdBQVcsY0FBYyxnQkFBZ0IsS0FBSztBQUU5QyxNQUFNLGtCQUFrQixNQUFNLG1CQUFZLEVBQUUsV0FBVyxHQUFHLFNBQVMsUUFDakUsd0JBQUMsZ0JBQWdCLFdBQWpCO0NBQ087Q0FDTCxXQUFXLEdBQUcsNEJBQTRCLFVBQVU7Q0FDcEQsR0FBSTtDQUFTOzs7O1NBQ2Y7O0FBQ0YsZ0JBQWdCLGNBQWMsZ0JBQWdCLFVBQVU7QUFFeEQsU0FDRSxRQUNBLGFBQ0EsYUFDQSxlQUNBLGVBQ0EsYUFDQSxZQUNBLGlCQUNBLHNCQUNBIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbInNlbGVjdC5qc3giXSwidmVyc2lvbiI6Mywic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSBcInJlYWN0XCJcclxuaW1wb3J0ICogYXMgU2VsZWN0UHJpbWl0aXZlIGZyb20gXCJAcmFkaXgtdWkvcmVhY3Qtc2VsZWN0XCJcclxuaW1wb3J0IHsgQ2hlY2ssIENoZXZyb25Eb3duLCBDaGV2cm9uVXAgfSBmcm9tIFwibHVjaWRlLXJlYWN0XCJcclxuXHJcbmltcG9ydCB7IGNuIH0gZnJvbSBcIkAvbGliL3V0aWxzXCJcclxuXHJcbmNvbnN0IFNlbGVjdCA9IFNlbGVjdFByaW1pdGl2ZS5Sb290XHJcblxyXG5jb25zdCBTZWxlY3RHcm91cCA9IFNlbGVjdFByaW1pdGl2ZS5Hcm91cFxyXG5cclxuY29uc3QgU2VsZWN0VmFsdWUgPSBTZWxlY3RQcmltaXRpdmUuVmFsdWVcclxuXHJcbmNvbnN0IFNlbGVjdFRyaWdnZXIgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgY2hpbGRyZW4sIC4uLnByb3BzIH0sIHJlZikgPT4gKFxyXG4gIDxTZWxlY3RQcmltaXRpdmUuVHJpZ2dlclxyXG4gICAgcmVmPXtyZWZ9XHJcbiAgICBjbGFzc05hbWU9e2NuKFxyXG4gICAgICBcImZsZXggaC0xMCB3LWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItaW5wdXQgYmctYmFja2dyb3VuZCBweC0zIHB5LTIgdGV4dC1zbSByaW5nLW9mZnNldC1iYWNrZ3JvdW5kIHBsYWNlaG9sZGVyOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBmb2N1czpvdXRsaW5lLW5vbmUgZm9jdXM6cmluZy0yIGZvY3VzOnJpbmctcmluZyBmb2N1czpyaW5nLW9mZnNldC0yIGRpc2FibGVkOmN1cnNvci1ub3QtYWxsb3dlZCBkaXNhYmxlZDpvcGFjaXR5LTUwIFsmPnNwYW5dOmxpbmUtY2xhbXAtMVwiLFxyXG4gICAgICBjbGFzc05hbWVcclxuICAgICl9XHJcbiAgICB7Li4ucHJvcHN9PlxyXG4gICAge2NoaWxkcmVufVxyXG4gICAgPFNlbGVjdFByaW1pdGl2ZS5JY29uIGFzQ2hpbGQ+XHJcbiAgICAgIDxDaGV2cm9uRG93biBjbGFzc05hbWU9XCJoLTQgdy00IG9wYWNpdHktNTBcIiAvPlxyXG4gICAgPC9TZWxlY3RQcmltaXRpdmUuSWNvbj5cclxuICA8L1NlbGVjdFByaW1pdGl2ZS5UcmlnZ2VyPlxyXG4pKVxyXG5TZWxlY3RUcmlnZ2VyLmRpc3BsYXlOYW1lID0gU2VsZWN0UHJpbWl0aXZlLlRyaWdnZXIuZGlzcGxheU5hbWVcclxuXHJcbmNvbnN0IFNlbGVjdFNjcm9sbFVwQnV0dG9uID0gUmVhY3QuZm9yd2FyZFJlZigoeyBjbGFzc05hbWUsIC4uLnByb3BzIH0sIHJlZikgPT4gKFxyXG4gIDxTZWxlY3RQcmltaXRpdmUuU2Nyb2xsVXBCdXR0b25cclxuICAgIHJlZj17cmVmfVxyXG4gICAgY2xhc3NOYW1lPXtjbihcImZsZXggY3Vyc29yLWRlZmF1bHQgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHB5LTFcIiwgY2xhc3NOYW1lKX1cclxuICAgIHsuLi5wcm9wc30+XHJcbiAgICA8Q2hldnJvblVwIGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxyXG4gIDwvU2VsZWN0UHJpbWl0aXZlLlNjcm9sbFVwQnV0dG9uPlxyXG4pKVxyXG5TZWxlY3RTY3JvbGxVcEJ1dHRvbi5kaXNwbGF5TmFtZSA9IFNlbGVjdFByaW1pdGl2ZS5TY3JvbGxVcEJ1dHRvbi5kaXNwbGF5TmFtZVxyXG5cclxuY29uc3QgU2VsZWN0U2Nyb2xsRG93bkJ1dHRvbiA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+IChcclxuICA8U2VsZWN0UHJpbWl0aXZlLlNjcm9sbERvd25CdXR0b25cclxuICAgIHJlZj17cmVmfVxyXG4gICAgY2xhc3NOYW1lPXtjbihcImZsZXggY3Vyc29yLWRlZmF1bHQgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHB5LTFcIiwgY2xhc3NOYW1lKX1cclxuICAgIHsuLi5wcm9wc30+XHJcbiAgICA8Q2hldnJvbkRvd24gY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XHJcbiAgPC9TZWxlY3RQcmltaXRpdmUuU2Nyb2xsRG93bkJ1dHRvbj5cclxuKSlcclxuU2VsZWN0U2Nyb2xsRG93bkJ1dHRvbi5kaXNwbGF5TmFtZSA9XHJcbiAgU2VsZWN0UHJpbWl0aXZlLlNjcm9sbERvd25CdXR0b24uZGlzcGxheU5hbWVcclxuXHJcbmNvbnN0IFNlbGVjdENvbnRlbnQgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgY2hpbGRyZW4sIHBvc2l0aW9uID0gXCJwb3BwZXJcIiwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoXHJcbiAgPFNlbGVjdFByaW1pdGl2ZS5Qb3J0YWw+XHJcbiAgICA8U2VsZWN0UHJpbWl0aXZlLkNvbnRlbnRcclxuICAgICAgcmVmPXtyZWZ9XHJcbiAgICAgIGNsYXNzTmFtZT17Y24oXHJcbiAgICAgICAgXCJyZWxhdGl2ZSB6LTUwIG1heC1oLTk2IG1pbi13LVs4cmVtXSBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1tZCBib3JkZXIgYmctcG9wb3ZlciB0ZXh0LXBvcG92ZXItZm9yZWdyb3VuZCBzaGFkb3ctbWQgZGF0YS1bc3RhdGU9b3Blbl06YW5pbWF0ZS1pbiBkYXRhLVtzdGF0ZT1jbG9zZWRdOmFuaW1hdGUtb3V0IGRhdGEtW3N0YXRlPWNsb3NlZF06ZmFkZS1vdXQtMCBkYXRhLVtzdGF0ZT1vcGVuXTpmYWRlLWluLTAgZGF0YS1bc3RhdGU9Y2xvc2VkXTp6b29tLW91dC05NSBkYXRhLVtzdGF0ZT1vcGVuXTp6b29tLWluLTk1IGRhdGEtW3NpZGU9Ym90dG9tXTpzbGlkZS1pbi1mcm9tLXRvcC0yIGRhdGEtW3NpZGU9bGVmdF06c2xpZGUtaW4tZnJvbS1yaWdodC0yIGRhdGEtW3NpZGU9cmlnaHRdOnNsaWRlLWluLWZyb20tbGVmdC0yIGRhdGEtW3NpZGU9dG9wXTpzbGlkZS1pbi1mcm9tLWJvdHRvbS0yXCIsXHJcbiAgICAgICAgcG9zaXRpb24gPT09IFwicG9wcGVyXCIgJiZcclxuICAgICAgICAgIFwiZGF0YS1bc2lkZT1ib3R0b21dOnRyYW5zbGF0ZS15LTEgZGF0YS1bc2lkZT1sZWZ0XTotdHJhbnNsYXRlLXgtMSBkYXRhLVtzaWRlPXJpZ2h0XTp0cmFuc2xhdGUteC0xIGRhdGEtW3NpZGU9dG9wXTotdHJhbnNsYXRlLXktMVwiLFxyXG4gICAgICAgIGNsYXNzTmFtZVxyXG4gICAgICApfVxyXG4gICAgICBwb3NpdGlvbj17cG9zaXRpb259XHJcbiAgICAgIHsuLi5wcm9wc30+XHJcbiAgICAgIDxTZWxlY3RTY3JvbGxVcEJ1dHRvbiAvPlxyXG4gICAgICA8U2VsZWN0UHJpbWl0aXZlLlZpZXdwb3J0XHJcbiAgICAgICAgY2xhc3NOYW1lPXtjbihcInAtMVwiLCBwb3NpdGlvbiA9PT0gXCJwb3BwZXJcIiAmJlxyXG4gICAgICAgICAgXCJoLVt2YXIoLS1yYWRpeC1zZWxlY3QtdHJpZ2dlci1oZWlnaHQpXSB3LWZ1bGwgbWluLXctW3ZhcigtLXJhZGl4LXNlbGVjdC10cmlnZ2VyLXdpZHRoKV1cIil9PlxyXG4gICAgICAgIHtjaGlsZHJlbn1cclxuICAgICAgPC9TZWxlY3RQcmltaXRpdmUuVmlld3BvcnQ+XHJcbiAgICAgIDxTZWxlY3RTY3JvbGxEb3duQnV0dG9uIC8+XHJcbiAgICA8L1NlbGVjdFByaW1pdGl2ZS5Db250ZW50PlxyXG4gIDwvU2VsZWN0UHJpbWl0aXZlLlBvcnRhbD5cclxuKSlcclxuU2VsZWN0Q29udGVudC5kaXNwbGF5TmFtZSA9IFNlbGVjdFByaW1pdGl2ZS5Db250ZW50LmRpc3BsYXlOYW1lXHJcblxyXG5jb25zdCBTZWxlY3RMYWJlbCA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9LCByZWYpID0+IChcclxuICA8U2VsZWN0UHJpbWl0aXZlLkxhYmVsXHJcbiAgICByZWY9e3JlZn1cclxuICAgIGNsYXNzTmFtZT17Y24oXCJweS0xLjUgcGwtOCBwci0yIHRleHQtc20gZm9udC1zZW1pYm9sZFwiLCBjbGFzc05hbWUpfVxyXG4gICAgey4uLnByb3BzfSAvPlxyXG4pKVxyXG5TZWxlY3RMYWJlbC5kaXNwbGF5TmFtZSA9IFNlbGVjdFByaW1pdGl2ZS5MYWJlbC5kaXNwbGF5TmFtZVxyXG5cclxuY29uc3QgU2VsZWN0SXRlbSA9IFJlYWN0LmZvcndhcmRSZWYoKHsgY2xhc3NOYW1lLCBjaGlsZHJlbiwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoXHJcbiAgPFNlbGVjdFByaW1pdGl2ZS5JdGVtXHJcbiAgICByZWY9e3JlZn1cclxuICAgIGNsYXNzTmFtZT17Y24oXHJcbiAgICAgIFwicmVsYXRpdmUgZmxleCB3LWZ1bGwgY3Vyc29yLWRlZmF1bHQgc2VsZWN0LW5vbmUgaXRlbXMtY2VudGVyIHJvdW5kZWQtc20gcHktMS41IHBsLTggcHItMiB0ZXh0LXNtIG91dGxpbmUtbm9uZSBmb2N1czpiZy1hY2NlbnQgZm9jdXM6dGV4dC1hY2NlbnQtZm9yZWdyb3VuZCBkYXRhLVtkaXNhYmxlZF06cG9pbnRlci1ldmVudHMtbm9uZSBkYXRhLVtkaXNhYmxlZF06b3BhY2l0eS01MFwiLFxyXG4gICAgICBjbGFzc05hbWVcclxuICAgICl9XHJcbiAgICB7Li4ucHJvcHN9PlxyXG4gICAgPHNwYW4gY2xhc3NOYW1lPVwiYWJzb2x1dGUgbGVmdC0yIGZsZXggaC0zLjUgdy0zLjUgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyXCI+XHJcbiAgICAgIDxTZWxlY3RQcmltaXRpdmUuSXRlbUluZGljYXRvcj5cclxuICAgICAgICA8Q2hlY2sgY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XHJcbiAgICAgIDwvU2VsZWN0UHJpbWl0aXZlLkl0ZW1JbmRpY2F0b3I+XHJcbiAgICA8L3NwYW4+XHJcblxyXG4gICAgPFNlbGVjdFByaW1pdGl2ZS5JdGVtVGV4dD57Y2hpbGRyZW59PC9TZWxlY3RQcmltaXRpdmUuSXRlbVRleHQ+XHJcbiAgPC9TZWxlY3RQcmltaXRpdmUuSXRlbT5cclxuKSlcclxuU2VsZWN0SXRlbS5kaXNwbGF5TmFtZSA9IFNlbGVjdFByaW1pdGl2ZS5JdGVtLmRpc3BsYXlOYW1lXHJcblxyXG5jb25zdCBTZWxlY3RTZXBhcmF0b3IgPSBSZWFjdC5mb3J3YXJkUmVmKCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfSwgcmVmKSA9PiAoXHJcbiAgPFNlbGVjdFByaW1pdGl2ZS5TZXBhcmF0b3JcclxuICAgIHJlZj17cmVmfVxyXG4gICAgY2xhc3NOYW1lPXtjbihcIi1teC0xIG15LTEgaC1weCBiZy1tdXRlZFwiLCBjbGFzc05hbWUpfVxyXG4gICAgey4uLnByb3BzfSAvPlxyXG4pKVxyXG5TZWxlY3RTZXBhcmF0b3IuZGlzcGxheU5hbWUgPSBTZWxlY3RQcmltaXRpdmUuU2VwYXJhdG9yLmRpc3BsYXlOYW1lXHJcblxyXG5leHBvcnQge1xyXG4gIFNlbGVjdCxcclxuICBTZWxlY3RHcm91cCxcclxuICBTZWxlY3RWYWx1ZSxcclxuICBTZWxlY3RUcmlnZ2VyLFxyXG4gIFNlbGVjdENvbnRlbnQsXHJcbiAgU2VsZWN0TGFiZWwsXHJcbiAgU2VsZWN0SXRlbSxcclxuICBTZWxlY3RTZXBhcmF0b3IsXHJcbiAgU2VsZWN0U2Nyb2xsVXBCdXR0b24sXHJcbiAgU2VsZWN0U2Nyb2xsRG93bkJ1dHRvbixcclxufVxyXG4iXX0=

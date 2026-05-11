@@ -16,11 +16,38 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: "select_account" });
+const requiredFirebaseValues = [
+  firebaseConfig.apiKey,
+  firebaseConfig.authDomain,
+  firebaseConfig.projectId,
+  firebaseConfig.appId,
+];
 
-setPersistence(auth, browserLocalPersistence).catch((error) => {
-  console.error("Firebase persistence setup failed", error);
-});
+export const isFirebaseConfigured = requiredFirebaseValues.every(
+  (value) => typeof value === "string" && value.trim() && !value.includes("your_")
+);
+
+let app = null;
+let firebaseAuth = null;
+let provider = null;
+
+if (isFirebaseConfigured) {
+  try {
+    app = initializeApp(firebaseConfig);
+    firebaseAuth = getAuth(app);
+    provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    setPersistence(firebaseAuth, browserLocalPersistence).catch((error) => {
+      console.error("Firebase persistence setup failed", error);
+    });
+  } catch (error) {
+    console.error("Firebase initialization failed", error);
+    firebaseAuth = null;
+    provider = null;
+  }
+}
+
+export { app };
+export const auth = firebaseAuth;
+export const googleProvider = provider;

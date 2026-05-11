@@ -98,7 +98,7 @@
 
 // export default App;
 
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AuthLayout from "./components/auth/layout";
 import AuthLogin from "./pages/auth/login";
 import AuthRegister from "./pages/auth/register";
@@ -149,16 +149,25 @@ import { useTokenRefresh, useSessionTimeout } from "@/hooks/useAuth"; // ADDING 
 function App() {
   useTokenRefresh();
   useSessionTimeout(30 * 60 * 1000);
+  const location = useLocation();
   const { user, isAuthenticated, isLoading } = useSelector(
     (state) => state.auth
   );
   const dispatch = useDispatch();
+  const isPublicRoute =
+    location.pathname === "/" ||
+    location.pathname.startsWith("/auth") ||
+    location.pathname.startsWith("/shop") ||
+    location.pathname.startsWith("/marketplace") ||
+    location.pathname.startsWith("/contact");
 
   useEffect(() => {
     dispatch(checkAuth());
   }, [dispatch]);
 
-  if (isLoading) return <Skeleton className="w-full bg-black h-[600px]" />;
+  if (isLoading && !isPublicRoute) {
+    return <Skeleton className="h-screen w-full bg-slate-100" />;
+  }
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">

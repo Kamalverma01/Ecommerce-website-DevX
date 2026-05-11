@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const API_BASE = `${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/auth`;
+const AUTH_TIMEOUT = 8000;
 
 const initialState = {
   isAuthenticated: false,
@@ -10,12 +11,12 @@ const initialState = {
 };
 
 async function postAuth(url, data, withCredentials = true) {
-  const response = await axios.post(url, data, { withCredentials });
+  const response = await axios.post(url, data, { withCredentials, timeout: AUTH_TIMEOUT });
   return response.data;
 }
 
 async function putAuth(url, data) {
-  const response = await axios.put(url, data, { withCredentials: true });
+  const response = await axios.put(url, data, { withCredentials: true, timeout: AUTH_TIMEOUT });
   return response.data;
 }
 
@@ -117,7 +118,10 @@ export const getProfileSummary = createAsyncThunk(
   "auth/profileSummary",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${API_BASE}/profile`, { withCredentials: true });
+      const response = await axios.get(`${API_BASE}/profile`, {
+        withCredentials: true,
+        timeout: AUTH_TIMEOUT,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || { message: "Profile fetch failed" });
@@ -157,6 +161,7 @@ export const checkAuth = createAsyncThunk(
     try {
       const response = await axios.get(`${API_BASE}/check-auth`, {
         withCredentials: true,
+        timeout: AUTH_TIMEOUT,
         headers: {
           "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
         },

@@ -16,6 +16,7 @@ import { useToast } from "@/components/ui/use-toast";
 import {
   auth,
   googleProvider,
+  isFirebaseConfigured,
 } from "@/config/firebase-config";
 
 import {
@@ -320,6 +321,11 @@ function AuthRegister() {
   // GOOGLE SIGNUP
   async function handleGoogleStart() {
     try {
+      if (!isFirebaseConfigured || !auth || !googleProvider) {
+        showError("Google sign in is not configured");
+        return;
+      }
+
       setIsGoogleLoading(true);
 
       const result =

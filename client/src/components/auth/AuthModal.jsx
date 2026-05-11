@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { auth, googleProvider } from "@/config/firebase-config";
+import { auth, googleProvider, isFirebaseConfigured } from "@/config/firebase-config";
 import { checkAuth, loginUser, loginWithGoogle } from "@/store/auth-slice";
 import { AUTH_MODAL_EVENT } from "@/lib/auth-modal";
 
@@ -103,6 +103,14 @@ function AuthModal() {
 
   async function handleGoogleLogin() {
     try {
+      if (!isFirebaseConfigured || !auth || !googleProvider) {
+        toast({
+          title: "Google sign in is not configured",
+          variant: "destructive",
+        });
+        return;
+      }
+
       setGoogleLoading(true);
 
       const result = await signInWithPopup(auth, googleProvider);

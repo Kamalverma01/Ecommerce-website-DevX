@@ -7,10 +7,12 @@ import axios from 'axios';
 import { setAccessToken, setRefreshTokenMarker, clearAllTokens } from '@/utils/token';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const AUTH_TIMEOUT = 8000;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   withCredentials: true, // Important: send cookies with requests
+  timeout: AUTH_TIMEOUT,
 });
 
 /**

@@ -11,6 +11,7 @@ import {
 import {
   auth,
   googleProvider,
+  isFirebaseConfigured,
 } from "@/config/firebase-config";
 
 import { signInWithPopup } from "firebase/auth";
@@ -92,6 +93,14 @@ export default function LoginPage() {
   // GOOGLE LOGIN
   const handleGoogleLogin = async () => {
     try {
+      if (!isFirebaseConfigured || !auth || !googleProvider) {
+        toast({
+          title: "Google sign in is not configured",
+          variant: "destructive",
+        });
+        return;
+      }
+
       setGoogleLoading(true);
 
       const result =

@@ -1,4 +1,3 @@
-import React from "react";
 import myLogo from "../../assets/pscwhitelogo.png";
 
 function NotFound() {
@@ -17,7 +16,6 @@ function NotFound() {
             width={140}
             height={140}
             className="object-contain"
-            priority
           />
         </div>
 
