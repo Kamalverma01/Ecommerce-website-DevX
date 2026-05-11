@@ -8,8 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 .env
 .env.local
-node_modules
-dist
 build
 
 node_modules
