@@ -1,0 +1,99 @@
+{
+  "collection": "sellers",
+  "description": "Stores seller applications and approved seller profile details for the marketplace.",
+  "validator": {
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": ["userId", "businessName", "phone", "address", "status", "createdAt", "updatedAt"],
+      "properties": {
+        "_id": {
+          "bsonType": "objectId",
+          "description": "Primary MongoDB document id"
+        },
+        "userId": {
+          "bsonType": "objectId",
+          "description": "Reference to users._id. One user can have one seller application."
+        },
+        "businessName": {
+          "bsonType": "string",
+          "description": "Seller business/shop name"
+        },
+        "phone": {
+          "bsonType": "string",
+          "description": "Seller contact phone number"
+        },
+        "address": {
+          "bsonType": "string",
+          "description": "Business address"
+        },
+        "businessType": {
+          "bsonType": "string",
+          "description": "Business type such as retailer, wholesaler, distributor, or brand"
+        },
+        "supportEmail": {
+          "bsonType": "string",
+          "description": "Seller support email"
+        },
+        "gstNumber": {
+          "bsonType": "string",
+          "description": "GST/tax registration number"
+        },
+        "pickupPincode": {
+          "bsonType": "string",
+          "description": "Shipping pickup pincode"
+        },
+        "productCategories": {
+          "bsonType": "array",
+          "description": "Requested selling categories",
+          "items": {
+            "bsonType": "string"
+          }
+        },
+        "status": {
+          "enum": ["pending", "approved", "rejected"],
+          "description": "Seller application status"
+        },
+        "commissionOverride": {
+          "bsonType": ["double", "int", "decimal", "null"],
+          "description": "Optional seller-specific marketplace commission percentage"
+        },
+        "approvedAt": {
+          "bsonType": ["date", "null"],
+          "description": "Date/time when admin approved seller"
+        },
+        "rejectedAt": {
+          "bsonType": ["date", "null"],
+          "description": "Date/time when admin rejected seller"
+        },
+        "notes": {
+          "bsonType": "string",
+          "description": "Admin notes"
+        },
+        "createdAt": {
+          "bsonType": "date",
+          "description": "Document creation timestamp from Mongoose timestamps"
+        },
+        "updatedAt": {
+          "bsonType": "date",
+          "description": "Document update timestamp from Mongoose timestamps"
+        }
+      }
+    }
+  },
+  "indexes": [
+    {
+      "keys": {
+        "userId": 1
+      },
+      "options": {
+        "unique": true
+      }
+    },
+    {
+      "keys": {
+        "status": 1
+      },
+      "options": {}
+    }
+  ]
+}
