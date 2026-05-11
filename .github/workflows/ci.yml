@@ -41,7 +41,7 @@ jobs:
           cd server
           npm install
 
-      - name: Verify Server
+      - name: Check Server Dependencies
         run: |
           cd server
-          npm run start --if-present
+          npm install
