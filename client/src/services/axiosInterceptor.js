@@ -130,7 +130,10 @@ export const setupResponseInterceptor = (axiosInstance) => {
  * @param {string} baseURL - Base URL for API
  * @returns {Object} Configured axios instance
  */
-export const createAxiosInstance = (baseURL = import.meta.env.VITE_API_URL) => {
+const API_ORIGIN = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000').replace(/\/$/, '');
+const DEFAULT_API_URL = import.meta.env.VITE_API_URL || `${API_ORIGIN}/api`;
+
+export const createAxiosInstance = (baseURL = DEFAULT_API_URL) => {
   const instance = axios.create({
     baseURL,
     withCredentials: true, // Include cookies in requests
